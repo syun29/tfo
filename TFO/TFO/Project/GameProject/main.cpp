@@ -1,4 +1,4 @@
-
+#include "Game/AnimeData.h"
 #include "Base/Base.h"
 #include "Game/Player.h"
 //--------------------------------------------
@@ -57,7 +57,7 @@ void Init(void)
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
 	//-----------------------------------------------------
 	//---–î‘ã----
-	ADD_RESOURCE("Player", CImage::CreateImage("Image/Idle (32x32).png"));
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Idle (32x32).png", player_anim_data,246,246));
 
 
 

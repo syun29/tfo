@@ -45,7 +45,8 @@ void Player::StateDown()
 Player::Player(const CVector2D& p, bool flip) :Base(eType_Player)
 {
 	//‰æ‘œ•¡»
-	m_img = COPY_RESOURCE("Idle", CImage);
+	m_img = COPY_RESOURCE("Player", CImage);
+	m_img.ChangeAnimation(0);
 	//À•Wİ’è
 	m_pos_old = m_pos = p;
 	//’†SˆÊ’uİ’è
@@ -77,6 +78,7 @@ void Player::Update()
 		StateDown();
 		break;
 	}
+	m_img.UpdateAnimation();
 }
 
 void Player::Draw()
