@@ -1,6 +1,12 @@
+#include "Game/AnimeData.h"
 #include "Base/Base.h"
 #include "Game/Player.h"
+<<<<<<< HEAD
 #include "Game/Field.h"
+=======
+
+
+>>>>>>> ce56b3e31c8fd59e97962e3c67b0a498592d3be7
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
@@ -57,10 +63,11 @@ void Init(void)
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
 	//---矢代----
-	ADD_RESOURCE("Player", CImage::CreateImage("Virtual Guy/Idle (32x32).png", 256, 256));
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Idle (32x32).png", player_anim_data,32,32));
 
+	Base::Add(new Player(CVector2D(650, 500), false));
 
-
+	Base::Add(new Player(CVector2D(500, 500), false));
 
 
 	//---山本----
