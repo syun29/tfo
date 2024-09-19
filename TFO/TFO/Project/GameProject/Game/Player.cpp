@@ -9,10 +9,7 @@ void Player::StateIdle()
 	//ジャンプ力
 	const float jump_pow = 12;
 	//左移動
-	if (PUSH(CInput::eLeft)) {
-		m_change++;
-	}
-	if (m_change%2&&HOLD(CInput::eLeft)) {
+	if (HOLD(CInput::eLeft)) {
 		//移動量を設定
 		m_pos.x += -move_speed;
 		//反転フラグ
@@ -47,6 +44,7 @@ Player::Player(const CVector2D& p, bool flip) :Base(eType_Player)
 	//画像複製
 	m_img = COPY_RESOURCE("Player", CImage);
 	m_img.ChangeAnimation(0);
+	m_img.SetSize(64, 64);
 	//座標設定
 	m_pos_old = m_pos = p;
 	//中心位置設定
