@@ -25,7 +25,6 @@ private:
 	void StateDamage();
 	void StateDown();
 public:
-	int m_change;
 	Player(const CVector2D& p, bool flip);
 	void Update();
 	void Draw();
