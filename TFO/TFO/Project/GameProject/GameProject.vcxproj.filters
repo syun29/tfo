@@ -8,17 +8,12 @@
     <ClCompile Include="Game\Player.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="Game\Field.cpp" />
-    <ClCompile Include="Game\Map.cpp" />
-=======
     <ClCompile Include="Game\AnimeData.cpp">
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Game\Game.cpp">
       <Filter>Game</Filter>
     </ClCompile>
->>>>>>> ce56b3e31c8fd59e97962e3c67b0a498592d3be7
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -36,16 +31,11 @@
     <ClInclude Include="Game\Player.h">
       <Filter>Game</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Game\Field.h" />
-    <ClInclude Include="Game\Map.h" />
-=======
     <ClInclude Include="Game\AnimeData.h">
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Game.h">
       <Filter>Game</Filter>
     </ClInclude>
->>>>>>> ce56b3e31c8fd59e97962e3c67b0a498592d3be7
   </ItemGroup>
 </Project>
