@@ -12,15 +12,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
-    <ClCompile Include="Game\AnimeData.cpp" />
-    <ClCompile Include="Game\Game.cpp" />
-    <ClCompile Include="Game\Player.cpp" />
+    <ClCompile Include="Game\Field.cpp" />
+    <ClCompile Include="Game\Map.cpp" />    <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
+<<<<<<< .mine
+    <ClInclude Include="Game\Field.h" />
+    <ClInclude Include="Game\Map.h" />
+=======
     <ClInclude Include="Game\AnimeData.h" />
     <ClInclude Include="Game\Game.h" />
+>>>>>>> .theirs
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Global.h" />
   </ItemGroup>
