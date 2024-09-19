@@ -1,5 +1,5 @@
 #include "Player.h"
-
+#include "AnimeData.h"
 void Player::StateIdle()
 {
 	//移動量
@@ -24,6 +24,20 @@ void Player::StateIdle()
 		//反転フラグ
 		m_flip = false;
 		move_flag = true;
+	}
+	//ジャンプ
+	if (m_is_ground && PUSH(CInput::eButton2)) {
+		m_vec.y = -jump_pow;
+		m_is_ground = false;
+	}
+	//ジャンプ中なら
+	if (!m_is_ground) {
+		if (m_vec.y < 0)
+			//上昇アニメーション
+			m_img.ChangeAnimation(eAnimJumpUp, false);
+		else
+			//下降アニメーション
+			m_img.ChangeAnimation(eAnimJumpDown, false);
 	}
 }
 
