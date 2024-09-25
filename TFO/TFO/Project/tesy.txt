@@ -1,4 +1,38 @@
----aou----
+aou
+itrgrgijiorjrj
+wasda
+
+
+
+
+<<<<<<< HEAD
+aou
+=======
+aou
+itrgrgijiorjrj
+wasda
+>>>>>>> 3925dd4e3573159734b4c033314c21bcdbd122f4
+
+
+
+
+
+
+<<<<<<< .mine
+aou
+=======
+aou
+itrgrgijiorjrj
+wasda
+>>>>>>> 3925dd4e3573159734b4c033314c21bcdbd122f4
+
+
+
+
+
+
+
+=======
 
 
 
@@ -12,3 +46,4 @@
 
 
 ------wasda-------
+>>>>>>> .theirs
