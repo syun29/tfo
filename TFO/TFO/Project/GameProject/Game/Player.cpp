@@ -1,7 +1,5 @@
 #include "Player.h"
 #include "AnimeData.h"
-#include "Field.h"
-#include "Map.h"
 void Player::StateIdle()
 {
 	//ˆÚ“®—Ê
