@@ -5,10 +5,10 @@
 #include "Game/Field.h"
 
 
-
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
+
 
 
 
@@ -62,11 +62,11 @@ void Init(void)
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
 	//---矢代----
-	ADD_RESOURCE("Player", CImage::CreateImage("Image/Idle (32x32).png", player_anim_data,32,32));
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/amongAs.png", player_anim_data,32,32));
 
-	Base::Add(new Player(CVector2D(650, 500), false));
+	Base::Add(new Player(CVector2D(650, 500), true));
 
-	Base::Add(new Player(CVector2D(500, 500), false));
+	Base::Add(new Player(CVector2D(500, 500), true));
 
 
 	//---山本----
