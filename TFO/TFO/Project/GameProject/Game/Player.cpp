@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "AnimeData.h"
+#include "Field.h"
 #include "Map.h"
 void Player::StateIdle()
 {
@@ -31,17 +32,16 @@ void Player::StateIdle()
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
-	 else {
-		//移動中なら
-		if (move_flag) {
-			//走るアニメーション
-			m_img.ChangeAnimation(eAnimRun);
-		}
-		else {
-			//待機アニメーション
-			m_img.ChangeAnimation(eAnimIdle);
-		}
+	//移動中なら
+	if (move_flag) {
+		//走るアニメーション
+		m_img.ChangeAnimation(eAnimRun);
 	}
+	else {
+		//待機アニメーション
+		m_img.ChangeAnimation(eAnimIdle);
+	}
+
 }
 
 void Player::StateDamage()
