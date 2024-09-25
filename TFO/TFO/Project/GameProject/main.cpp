@@ -77,7 +77,7 @@ void Init(void)
 
 
 	//---•šÎ-----
-
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
 
 
 

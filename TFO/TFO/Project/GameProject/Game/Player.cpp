@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "AnimeData.h"
+
 void Player::StateIdle()
 {
 	//ˆÚ“®—Ê
