@@ -29,3 +29,4 @@ public:
 	void Draw();
 	void Collision(Base* b);
 };
+//tu
