@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "AnimeData.h"
+#include "Map.h"
 void Player::StateIdle()
 {
 	//移動量
@@ -30,19 +31,17 @@ void Player::StateIdle()
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
-	//ジャンプ中なら
-	if (!m_is_ground) {
-		if (m_vec.y < 0)
-			//上昇アニメーション
-			m_img.ChangeAnimation(eAnimJumpUp, false);
-		else
-			//下降アニメーション
-			m_img.ChangeAnimation(eAnimJumpDown, false);
+	 else {
+		//移動中なら
+		if (move_flag) {
+			//走るアニメーション
+			m_img.ChangeAnimation(eAnimRun);
+		}
+		else {
+			//待機アニメーション
+			m_img.ChangeAnimation(eAnimIdle);
+		}
 	}
-}
-
-void Player::StateAttack()
-{
 }
 
 void Player::StateDamage()

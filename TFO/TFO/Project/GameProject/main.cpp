@@ -1,12 +1,14 @@
 #include "Game/AnimeData.h"
 #include "Base/Base.h"
 #include "Game/Player.h"
+
 #include "Game/Field.h"
 
 
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
+
 
 
 
@@ -62,9 +64,9 @@ void Init(void)
 	//---矢代----
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Idle (32x32).png", player_anim_data,32,32));
 
-	Base::Add(new Player(CVector2D(650, 500), false));
+	Base::Add(new Player(CVector2D(650, 500), true));
 
-	Base::Add(new Player(CVector2D(500, 500), false));
+	Base::Add(new Player(CVector2D(500, 500), true));
 
 
 	//---山本----
