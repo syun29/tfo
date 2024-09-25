@@ -21,7 +21,6 @@ private:
 	int m_hp;
 	//Šeó‘Ô‚Å‚Ì‹““®
 	void StateIdle();
-	void StateAttack();
 	void StateDamage();
 	void StateDown();
 public:

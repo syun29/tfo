@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "AnimeData.h"
+#include "Map.h"
 void Player::StateIdle()
 {
 	//ˆÚ“®—Ê
@@ -41,10 +42,6 @@ void Player::StateIdle()
 			m_img.ChangeAnimation(eAnimIdle);
 		}
 	}
-}
-
-void Player::StateAttack()
-{
 }
 
 void Player::StateDamage()
