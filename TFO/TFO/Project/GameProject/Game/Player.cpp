@@ -41,7 +41,9 @@ void Player::StateIdle()
 			//待機アニメーション
 			m_img.ChangeAnimation(eAnimIdle);
 		}
-	
+		if (PUSH(CInput::eButton5)) {
+			m_change = !m_change;
+	}
 }
 
 void Player::StateDamage()

@@ -66,7 +66,7 @@ void Init(void)
 
 	Base::Add(new Player(CVector2D(650, 500), true));
 
-	Base::Add(new Player(CVector2D(500, 500), true));
+	Base::Add(new Player(CVector2D(500, 500), false));
 
 
 	//---ŽR–{----
