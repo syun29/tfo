@@ -27,19 +27,21 @@ void Player::StateIdle()
 	}
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
-		m_vec.y = -jump_pow;
+		m_vec.y = jump_pow;
 		m_is_ground = false;
 	}
-	//移動中なら
-	if (move_flag) {
-		//走るアニメーション
-		m_img.ChangeAnimation(eAnimRun);
-	}
-	else {
-		//待機アニメーション
-		m_img.ChangeAnimation(eAnimIdle);
-	}
-
+	
+	
+		//移動中なら
+		if (move_flag) {
+			//走るアニメーション
+			m_img.ChangeAnimation(eAnimRun);
+		}
+		else {
+			//待機アニメーション
+			m_img.ChangeAnimation(eAnimIdle);
+		}
+	
 }
 
 void Player::StateDamage()
