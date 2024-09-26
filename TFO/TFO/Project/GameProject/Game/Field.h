@@ -4,8 +4,7 @@
 class Field : public Base {
 private:
 
-	CImage m_foreground;
-	CImage m_town;
+	
 	CImage m_sky;
 	static float m_ground_y;
 public:
