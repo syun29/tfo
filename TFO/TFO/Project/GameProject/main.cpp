@@ -64,7 +64,7 @@ void Init(void)
 	//---ñÓë„----
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/amongAs2.png", player_anim_data, 32, 32));
 
-	Base::Add(new Player(CVector2D(650, 500), true));
+	Base::Add(new Player(CVector2D(650, 1060), true));
 
 	Base::Add(new Player(CVector2D(500, 500), false));
 
@@ -78,9 +78,9 @@ void Init(void)
 
 	//---ïöêŒ-----
 
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Terrain/Terrain (16x16).png"));
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Terrain (16x16).png"));
 
-
+	Base::Add(new Map());
 
 
 	

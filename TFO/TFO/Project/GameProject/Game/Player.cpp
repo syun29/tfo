@@ -1,5 +1,7 @@
 #include "Player.h"
 #include "AnimeData.h"
+#include "Map.h"
+#include "Field.h"
 void Player::StateIdle()
 {
 	//移動量
@@ -28,7 +30,7 @@ void Player::StateIdle()
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = jump_pow;
-		m_is_ground = false;
+		m_is_ground = true;
 	}
 	
 	
@@ -92,6 +94,12 @@ void Player::Update()
 		break;
 	}
 	m_img.UpdateAnimation();
+	//落ちていたら着地中状態へ移行
+	if (m_is_ground && m_vec.y > GRAVITY * 4)
+		m_is_ground = false;
+	//重力による落下
+	m_vec.y += GRAVITY;
+	m_pos += m_vec;
 }
 
 void Player::Draw()
@@ -106,4 +114,37 @@ void Player::Draw()
 
 void Player::Collision(Base* b)
 {
+	switch (b->m_type) {
+	case eType_Map:
+		if (Map* m = dynamic_cast<Map*>(b)) {
+			int t = m->CollisionRect(CVector2D(m_pos.x, m_pos_old.y), m_rect);
+			if (t != 0) {
+				m_pos.x = m_pos_old.x;
+			}
+			t = m->CollisionRect(CVector2D(m_pos_old.x, m_pos.y), m_rect);
+			if (t != 0) {
+				m_pos.y = m_pos_old.y;
+				//落下速度リセット
+				m_vec.y = 0;
+				//接地フラグON
+				m_is_ground = true;
+			}
+
+		}
+		break;
+
+	case eType_Field:
+		//Field型へキャスト、型変換出来たら
+		if (Field* f = dynamic_cast<Field*>(b)) {
+			//地面より下にいったら
+			if (m_pos.y > f->GetGroundY()) {
+				//地面の高さに戻す
+				m_pos.y = f->GetGroundY();
+				//落下速度リセット
+				m_vec.y = 0;
+				//設置フラグON
+				m_is_ground = true;
+			}
+		}
+	}
 }

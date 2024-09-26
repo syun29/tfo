@@ -14,5 +14,6 @@ public:
 	void Draw();
 	int GetTip(const CVector2D& pos, int* tx = nullptr, int* ty = nullptr);
 	int GetTip(int x, int y);
-	int CollisionMap(const CVector2D& pos, const CRect& rect, CVector2D* rev_pos);
+	int CollisionPoint(const CVector2D& pos);
+	int CollisionRect(const CVector2D& pos, const CRect& rect);
 };
