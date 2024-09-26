@@ -43,7 +43,7 @@ void Player::StateIdle()
 		}
 		if (PUSH(CInput::eButton5)) {
 			m_change = !m_change;
-	}
+		}
 }
 
 void Player::StateDamage()

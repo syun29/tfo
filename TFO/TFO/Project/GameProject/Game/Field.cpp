@@ -1,14 +1,15 @@
 #include "Field.h"
 
 float Field::m_ground_y = 540;
-Field::Field():Base(eType_Field)
+Field::Field() :Base(eType_Field)
 {
 	m_sky = COPY_RESOURCE("haikei1.png", CImage);
-	
+
+
+
 
 
 }
-
 void Field::Draw()
 {
 	float sc;
