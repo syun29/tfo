@@ -28,7 +28,7 @@ static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
 
 
 
-Map::Map() : Base(eType_Field)
+Map::Map() : Base(eType_Map)
 {
 	m_img = COPY_RESOURCE("MapTip", CImage);
 	m_background = COPY_RESOURCE("Dungeon", CImage);
