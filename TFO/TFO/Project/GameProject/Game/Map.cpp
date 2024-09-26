@@ -26,29 +26,31 @@ static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
 };
 
 
+
+
 Map::Map() : Base(eType_Field)
 {
 	m_img = COPY_RESOURCE("MapTip", CImage);
 	m_background = COPY_RESOURCE("Dungeon", CImage);
+	
 }
+
 
 void Map::Draw()
 {
-	m_background.Draw();
-
 	for (int i = 0; i < MAP_HEIGHT; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
-	
+			//表示しない制御
 			if (stage1data[i][j] == 0)continue;
 			int t = stage1data[i][j];
-		
+			//画像切り抜き
 			m_img.SetRect(32 * t, 0, 32 * t + 32, 32);
-		
+			//表示サイズ設定
 			m_img.SetSize(MAP_TIP_SIZE, MAP_TIP_SIZE);
-			
+			//表示位置設定
 			m_img.SetPos(MAP_TIP_SIZE * j - m_scroll.x,
 				MAP_TIP_SIZE * i - m_scroll.y);
-		
+			//描画
 			m_img.Draw();
 		}
 	}
@@ -69,13 +71,23 @@ int Map::GetTip(const CVector2D& pos, int* tx, int* ty)
 	//行と列の出力
 	if (ty) *ty = y * MAP_TIP_SIZE;
 	if (tx) *tx = x * MAP_TIP_SIZE;
-	return  stage1data[y][x];
+	//チップデータを返却
+	return stage1data[y][x];
+	
 }
 
 int Map::GetTip(int x, int y)
 {
-	return stage1data[y][x];
+	return  stage1data[y][x];
 }
+
+
+
+
+
+
+
+
 
 int Map::CollisionMap(const CVector2D& pos, const CRect& rect, CVector2D* rev_pos)
 {
@@ -105,3 +117,7 @@ int Map::CollisionMap(const CVector2D& pos, const CRect& rect, CVector2D* rev_po
 	}
 	return 0;
 }
+
+
+
+
