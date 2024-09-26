@@ -3,7 +3,7 @@
 float Field::m_ground_y = 540;
 Field::Field():Base(eType_Field)
 {
-	m_sky = COPY_RESOURCE("Sky", CImage);
+	m_sky = COPY_RESOURCE("haikei1.png", CImage);
 	m_town = COPY_RESOURCE("Town", CImage);
 	m_foreground = COPY_RESOURCE("ForeGround", CImage);
 
