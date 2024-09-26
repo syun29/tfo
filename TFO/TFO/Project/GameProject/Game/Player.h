@@ -17,6 +17,8 @@ private:
 	bool m_is_ground;
 	//ダメージ番号
 	int m_damage_no;
+	//切り替えフラグ
+	bool m_change;
 	//ヒットポイント
 	int m_hp;
 	//各状態での挙動
