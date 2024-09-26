@@ -3,7 +3,7 @@
 #include "Game/Player.h"
 
 #include "Game/Field.h"
-
+#include "Game/Map.h"
 
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
@@ -81,7 +81,7 @@ void Init(void)
 
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Terrain (16x16).png"));
 	ADD_RESOURCE("haikei1.png", CImage::CreateImage("Image/haikei1.png"));
-
+	Base::Add(new Map());
 
 
 
