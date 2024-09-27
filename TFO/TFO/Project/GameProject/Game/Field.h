@@ -5,7 +5,7 @@ class Field : public Base {
 private:
 
 	
-	CImage m_sky;
+	CImage m_haikei;
 	static float m_ground_y;
 public:
 	Field();
