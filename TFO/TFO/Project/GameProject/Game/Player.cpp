@@ -30,10 +30,18 @@ void Player::StateIdle()
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;
-		m_is_ground = true;
+		m_is_ground = false;
 	}
-	
-	
+	//ジャンプ中なら
+	if (!m_is_ground) {
+		if (m_vec.y < 0)
+			//上昇アニメーション
+			m_img.ChangeAnimation(eAnimJumpUp, false);
+		else
+			//下降アニメーション
+			m_img.ChangeAnimation(eAnimJumpDown, false);
+	}
+	else {
 		//移動中なら
 		if (move_flag) {
 			//走るアニメーション
@@ -43,9 +51,12 @@ void Player::StateIdle()
 			//待機アニメーション
 			m_img.ChangeAnimation(eAnimIdle);
 		}
+	}
 		if (PUSH(CInput::eButton5)) {
 			m_change = !m_change;
 		}
+	
+	
 }
 
 void Player::StateDamage()

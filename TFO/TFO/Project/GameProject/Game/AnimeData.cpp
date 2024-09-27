@@ -30,18 +30,18 @@ static TexAnim playerRun[] = {
 	{ 22,2 },
 	{ 23,2 },
 };
-/*static TexAnim playerJumpUp[] = {
+static TexAnim playerJumpUp[] = {
 	{ 11,4 },
 	
 
 };
-//static TexAnim playerJumpDown[] = {
-	{ 36,4 },
+static TexAnim playerJumpDown[] = {
+	{ 35,4 },
 	
-};*/
+};
 TexAnimData player_anim_data[] = {
 	ANIMDATA(playerIdle),
 	ANIMDATA(playerRun),
-	//ANIMDATA(playerJumpUp),
-	//ANIMDATA(playerJumpDown),
+	ANIMDATA(playerJumpUp),
+	ANIMDATA(playerJumpDown),
 };
