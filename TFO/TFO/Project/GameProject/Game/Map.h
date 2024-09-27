@@ -2,8 +2,8 @@
 
 #include"../Base/Base.h"
 #define MAP_WIDTH    20
-#define MAP_HEIGHT		8
-#define MAP_TIP_SIZE	128
+#define MAP_HEIGHT		12
+#define MAP_TIP_SIZE	100
 
 class Map : public Base {
 private:
