@@ -12,7 +12,7 @@ void gimmick::StateDown()
 {
 }
 
-gimmick::gimmick(const CVector2D& p, bool flip)
+gimmick::gimmick(const CVector2D& p, bool flip):Base(eType_gimmick)
 {
 }
 
