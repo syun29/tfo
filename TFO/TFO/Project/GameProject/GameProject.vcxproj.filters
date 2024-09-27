@@ -14,6 +14,11 @@
     <ClCompile Include="Game\Game.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Field.cpp" />
+    <ClCompile Include="Game\Map.cpp" />
+    <ClCompile Include="Game\gimmick.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -35,6 +40,11 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Field.h" />
+    <ClInclude Include="Game\Map.h" />
+    <ClInclude Include="Game\gimmick.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
