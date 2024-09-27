@@ -11,7 +11,7 @@ void Player::StateIdle()
 	//ジャンプ力
 	const float jump_pow = 12;
 	//左移動
-	if (HOLD(CInput::eLeft)) {
+	if (m_change&&HOLD(CInput::eLeft)) {
 		//移動量を設定
 		m_pos.x += -move_speed;
 		//反転フラグ
@@ -20,7 +20,7 @@ void Player::StateIdle()
 	}
 
 	//右移動
-	if (HOLD(CInput::eRight)) {
+	if (m_change && HOLD(CInput::eRight)) {
 		//移動量を設定
 		m_pos.x += move_speed;
 		//反転フラグ
@@ -28,7 +28,7 @@ void Player::StateIdle()
 		move_flag = true;
 	}
 	//ジャンプ
-	if (m_is_ground && PUSH(CInput::eButton2)) {
+	if (m_change && m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
@@ -67,7 +67,7 @@ void Player::StateDown()
 {
 }
 
-Player::Player(const CVector2D& p, bool flip) :Base(eType_Player)
+Player::Player(const CVector2D& p, bool flip,bool change) :Base(eType_Player)
 {
 	//画像複製
 	m_img = COPY_RESOURCE("Player", CImage);
@@ -85,6 +85,7 @@ Player::Player(const CVector2D& p, bool flip) :Base(eType_Player)
 	m_damage_no = -1;
 	//ヒットポイント
 	m_hp = 100;
+	m_change = change;
 }
 
 void Player::Update()
