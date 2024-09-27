@@ -5,7 +5,7 @@ Field::Field() :Base(eType_Field)
 {
 	m_sky = COPY_RESOURCE("haikei1.png", CImage);
 
-	m_ground_y = 1000;
+	m_ground_y = 1080;
 
 
 

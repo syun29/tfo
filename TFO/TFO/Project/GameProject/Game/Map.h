@@ -1,8 +1,8 @@
 #pragma once
 
 #include"../Base/Base.h"
-#define MAP_WIDTH    40
-#define MAP_HEIGHT		22
+#define MAP_WIDTH    20
+#define MAP_HEIGHT		8
 #define MAP_TIP_SIZE	128
 
 class Map : public Base {

@@ -29,7 +29,7 @@ void Player::StateIdle()
 	}
 	//ƒWƒƒƒ“ƒv
 	if (m_is_ground && PUSH(CInput::eButton2)) {
-		m_vec.y = jump_pow;
+		m_vec.y = -jump_pow;
 		m_is_ground = true;
 	}
 	

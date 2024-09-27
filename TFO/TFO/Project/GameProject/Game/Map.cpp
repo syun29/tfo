@@ -55,7 +55,9 @@ int Map::GetTip(const CVector2D& pos, int* tx, int* ty)
 	//行の制限
 	if (y < 0) y = 0;
 	if (y > MAP_HEIGHT - 1) y = MAP_HEIGHT - 1;
-	
+	//行と列の出力
+	if (ty) *ty = y * MAP_TIP_SIZE;
+	if (tx) *tx = x * MAP_TIP_SIZE;
 	//チップデータを返却
 	return stage1data[y][x];
 	
