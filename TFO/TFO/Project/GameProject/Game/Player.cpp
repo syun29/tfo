@@ -65,8 +65,8 @@ Player::Player(const CVector2D& p, bool flip) :Base(eType_Player)
 	//座標設定
 	m_pos_old = m_pos = p;
 	//中心位置設定
-	m_img.SetCenter(128, 224);
-	m_rect = CRect(-32, -128, 32, 0);
+	m_img.SetCenter(32, 64);
+	m_rect = CRect(-32, -64, 32, 0);
 	//反転フラグ
 	m_flip = flip;
 	m_is_ground = false;
@@ -110,6 +110,7 @@ void Player::Draw()
 	m_img.SetFlipH(m_flip);
 	//描画
 	m_img.Draw();
+	DrawRect();
 }
 
 void Player::Collision(Base* b)
