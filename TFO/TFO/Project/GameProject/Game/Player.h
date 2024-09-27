@@ -26,7 +26,7 @@ private:
 	void StateDamage();
 	void StateDown();
 public:
-	Player(const CVector2D& p, bool flip);
+	Player(const CVector2D& p, bool flip,bool change);
 	void Update();
 	void Draw();
 	void Collision(Base* b);

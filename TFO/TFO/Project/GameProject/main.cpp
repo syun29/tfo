@@ -64,9 +64,9 @@ void Init(void)
 	//---–î‘ã----
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/amongAs2.png", player_anim_data, 32, 32));
 
-	Base::Add(new Player(CVector2D(650, 100), true));
+	Base::Add(new Player(CVector2D(650, 100), true,true));
 
-	Base::Add(new Player(CVector2D(500, 100), false));
+	Base::Add(new Player(CVector2D(500, 100), true,false));
 
 
 	//---ŽR–{----
