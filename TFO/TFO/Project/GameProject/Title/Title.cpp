@@ -22,7 +22,7 @@ void Title::Draw()
 {
 	m_img.Draw();
 	//•¶Žš•\Ž¦
-	m_title_text.Draw(64, 256, 0, 0, 0, "Title");
+	m_title_text.Draw(64, 256, 0, 0, 0, "TFO");
 	m_title_text.Draw(64, 512, 0, 0, 0, "Push Z");
 }
 
