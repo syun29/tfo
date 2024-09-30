@@ -5,7 +5,7 @@
 enum {
     eType_Field,
     eType_Door,
-    eType_AreaChange,
+    eType_Areachange,
     eType_Player,
     eType_Enemy,
     eType_Bullet,
