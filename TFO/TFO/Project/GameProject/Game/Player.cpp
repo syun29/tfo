@@ -2,6 +2,8 @@
 #include "AnimeData.h"
 #include "Map.h"
 #include "Field.h"
+#include "Door.h"
+#include "Areachange.h"
 void Player::StateIdle()
 {
 	//ˆÚ“®—Ê
@@ -128,6 +130,15 @@ void Player::Draw()
 void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
+		//ƒhƒA
+	case eType_Door:
+		if (PUSH(CInput::eUp)) {
+			if (Door* s = dynamic_cast<Door*>(b)) {
+				if (Base::CollisionRect(this, s)) {
+					m_pos_old = m_pos = s->GetNextPos();
+				}
+			}
+		}
 	case eType_Map:
 		if (Map* m = dynamic_cast<Map*>(b)) {
 			int t = m->CollisionRect(CVector2D(m_pos.x, m_pos_old.y), m_rect);

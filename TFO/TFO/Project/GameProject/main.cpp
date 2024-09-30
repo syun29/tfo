@@ -1,9 +1,10 @@
 #include "Game/AnimeData.h"
 #include "Base/Base.h"
 #include "Game/Player.h"
-
+#include "Game/Door.h"
 #include "Game/Field.h"
 #include "Game/Map.h"
+
 
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
@@ -64,10 +65,13 @@ void Init(void)
 	//---–î‘ã----
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/amongAs2.png", player_anim_data, 32, 32));
 	ADD_RESOURCE("haikei", CImage::CreateImage("Image/haikei1.png"));
-
+	ADD_RESOURCE("Door", CImage::CreateImage("Image/Door.png"));
 	Base::Add(new Player(CVector2D(650, 100), true,true));
 
 	Base::Add(new Player(CVector2D(500, 100), true,false));
+
+	
+
 
 	Base::Add(new Field());
 

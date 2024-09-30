@@ -1,5 +1,5 @@
 #include "Map.h"
-
+#include "Door.h"
 static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
 	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
 	{ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
@@ -16,10 +16,10 @@ static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
 
 
 
-Map::Map() : Base(eType_Map)
+Map::Map() : Base(eType_Field)
 {
 	m_img = COPY_RESOURCE("MapTip", CImage);
-	
+	Base::Add(new Door(CVector2D(19 * MAP_TIP_SIZE, 21 * MAP_TIP_SIZE)));
 }
 
 
