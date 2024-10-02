@@ -107,13 +107,14 @@ void Player::Update()
 		StateDown();
 		break;
 	}
-	m_img.UpdateAnimation();
 	//óéÇøÇƒÇ¢ÇΩÇÁíÖíníÜèÛë‘Ç÷à⁄çs
 	if (m_is_ground && m_vec.y > GRAVITY * 4)
 		m_is_ground = false;
 	//èdóÕÇ…ÇÊÇÈóéâ∫
 	m_vec.y += GRAVITY;
 	m_pos += m_vec;
+	m_img.UpdateAnimation();
+	
 }
 
 void Player::Draw()
@@ -139,12 +140,12 @@ void Player::Collision(Base* b)
 				}
 			}
 		}
+		break;
 	case eType_Areachange:
 		if (PUSH(CInput::eUp)) {
 			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
 				if (Base::CollisionRect(this, s)) {
 					Base::Kill(1 << eType_Field
-						| 1 << eType_Enemy
 						| 1 << eType_Areachange
 						| 1 << eType_Door
 						| 1 << eType_Goal);
@@ -186,5 +187,7 @@ void Player::Collision(Base* b)
 				m_is_ground = true;
 			}
 		}
+		break;
 	}
+	
 }

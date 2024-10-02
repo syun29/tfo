@@ -88,7 +88,7 @@ void Init(void)
 
 
 
-	
+	Base::Add(new Game());
 	
 
 

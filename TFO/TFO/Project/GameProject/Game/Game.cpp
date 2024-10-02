@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Field.h"
 #include "Map.h"
+#include "Door.h"
 
 Game::Game() :Base(eType_Scene)
 {
