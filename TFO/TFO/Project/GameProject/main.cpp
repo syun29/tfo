@@ -84,7 +84,7 @@ void Init(void)
 
 	//---ïöêŒ-----
 
-	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/Terrain (16x16).png"));
+	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/map.png"));
 
 	Base::Add(new Map());
 
