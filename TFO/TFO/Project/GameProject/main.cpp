@@ -4,6 +4,7 @@
 #include "Game/Door.h"
 #include "Game/Field.h"
 #include "Game/Map.h"
+#include "Game/Game.h"
 
 
 //--------------------------------------------
@@ -65,10 +66,8 @@ void Init(void)
 	//---–î‘ã----
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/amongAs2.png", player_anim_data, 32, 32));
 	ADD_RESOURCE("haikei", CImage::CreateImage("Image/haikei1.png"));
-	//ADD_RESOURCE("Door", CImage::CreateImage("Image/Door.png"));
-	Base::Add(new Player(CVector2D(650, 100), true,true));
-
-	Base::Add(new Player(CVector2D(500, 100), true,false));
+	ADD_RESOURCE("Door", CImage::CreateImage("Image/Door.png"));
+	
 
 	
 
@@ -86,7 +85,7 @@ void Init(void)
 
 	ADD_RESOURCE("MapTip", CImage::CreateImage("Image/map.png"));
 
-	Base::Add(new Map());
+
 
 
 	

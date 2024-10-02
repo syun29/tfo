@@ -139,6 +139,22 @@ void Player::Collision(Base* b)
 				}
 			}
 		}
+	case eType_Areachange:
+		if (PUSH(CInput::eUp)) {
+			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
+				if (Base::CollisionRect(this, s)) {
+					Base::Kill(1 << eType_Field
+						| 1 << eType_Enemy
+						| 1 << eType_Areachange
+						| 1 << eType_Door
+						| 1 << eType_Goal);
+
+					m_pos_old = m_pos = s->GetNextPos();
+					Base::Add(new Map(s->GetNextArea()));
+				}
+			}
+		}
+		break;
 	case eType_Map:
 		if (Map* m = dynamic_cast<Map*>(b)) {
 			int t = m->CollisionRect(CVector2D(m_pos.x, m_pos_old.y), m_rect);
