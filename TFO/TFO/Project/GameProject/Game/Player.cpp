@@ -145,8 +145,8 @@ void Player::Collision(Base* b)
 		if (PUSH(CInput::eUp)) {
 			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
 				if (Base::CollisionRect(this, s)) {
-					Base::Kill(1 << eType_Field
-						| 1 << eType_Areachange
+					Base::Kill(
+						 1 << eType_Areachange
 						| 1 << eType_Door
 						| 1 << eType_Goal);
 
