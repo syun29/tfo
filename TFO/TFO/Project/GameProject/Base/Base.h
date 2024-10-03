@@ -44,12 +44,16 @@ public:
     static std::list<Base*> m_list;
     //スクロール値
     static CVector2D m_scroll;
+    bool m_switch;
+    CImage m_img;
+
 
 public:
     /// <summary>
     /// コンストラクタ
     /// </summary>
     Base(int type);
+    Base(BaseType type);
     /// <summary>
     /// デストラクタ
     /// </summary>
