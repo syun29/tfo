@@ -56,6 +56,7 @@ void Player::StateIdle()
 	}
 		if (PUSH(CInput::eButton5)) {
 			m_change = !m_change;
+			
 		}
 	
 	
@@ -125,7 +126,7 @@ void Player::Draw()
 	m_img.SetFlipH(m_flip);
 	//•`‰æ
 	m_img.Draw();
-	DrawRect();
+	//DrawRect();
 }
 
 void Player::Collision(Base* b)
