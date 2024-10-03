@@ -132,7 +132,7 @@ void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
 		//ƒhƒA
-	case eType_Door:
+	/*case eType_Door:
 		if (PUSH(CInput::eUp)) {
 			if (Door* s = dynamic_cast<Door*>(b)) {
 				if (Base::CollisionRect(this, s)) {
@@ -140,7 +140,7 @@ void Player::Collision(Base* b)
 				}
 			}
 		}
-		break;
+		break;*/
 	case eType_Areachange:
 		if (PUSH(CInput::eUp)) {
 			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
