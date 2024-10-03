@@ -37,8 +37,8 @@ Map::Map(int area) : Base(eType_Map)
 	switch (area) {
 	case 1:
 		memcpy(m_stage_data, stage1data, sizeof(stage1data));
-		Base::Add(new Door(CVector2D(18 * MAP_TIP_SIZE, 9 * MAP_TIP_SIZE),
-			CVector2D(37 * MAP_TIP_SIZE, 6 * MAP_TIP_SIZE)));
+		//Base::Add(new Door(CVector2D(18 * MAP_TIP_SIZE, 9 * MAP_TIP_SIZE),
+			//CVector2D(37 * MAP_TIP_SIZE, 6 * MAP_TIP_SIZE)));
 		Base::Add(new Door(CVector2D(38 * MAP_TIP_SIZE, 7 * MAP_TIP_SIZE),
 			CVector2D(18 * MAP_TIP_SIZE, 20 * MAP_TIP_SIZE)));
 		Base::Add(new Areachange(CVector2D(20 * MAP_TIP_SIZE, 10 * MAP_TIP_SIZE),
@@ -58,14 +58,6 @@ Map::Map(int area) : Base(eType_Map)
 void Map::Draw()
 {
 
-	int sx = m_scroll.x / MAP_TIP_SIZE;
-	if (sx < 0) sx = 0;
-	int ex = sx + 10;
-	if (ex > MAP_WIDTH) ex = MAP_WIDTH;
-	int sy = m_scroll.y / MAP_TIP_SIZE;
-	if (sy < 0) sy = 0;
-	int ey = sy + 10;
-	if (ey > MAP_HEIGHT) ey = MAP_HEIGHT;
 	for (int i = 0; i < MAP_HEIGHT; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
 			//•\Ž¦‚µ‚È‚¢§Œä
