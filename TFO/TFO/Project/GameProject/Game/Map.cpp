@@ -1,6 +1,7 @@
 #include "Map.h"
 #include "Areachange.h"
 #include "Door.h"
+#include "Goal.h"
 
 
 static int stage1data[MAP_HEIGHT][MAP_WIDTH] = {
@@ -47,6 +48,7 @@ Map::Map(int area) : Base(eType_Map)
 		break;
 	case 2:
 		memcpy(m_stage_data, stage2data, sizeof(stage2data));
+		Base::Add(new Goal(CVector2D(38 * MAP_TIP_SIZE, 21 * MAP_TIP_SIZE)));
 		break;
 	}
 	
@@ -85,11 +87,9 @@ int Map::GetTip(const CVector2D& pos, int* tx, int* ty)
 	//行の制限
 	if (y < 0) y = 0;
 	if (y > MAP_HEIGHT - 1) y = MAP_HEIGHT - 1;
-	//行と列の出力
-	if (ty) *ty = y * MAP_TIP_SIZE;
-	if (tx) *tx = x * MAP_TIP_SIZE;
+	
 	//チップデータを返却
-	return stage1data[y][x];
+	return m_stage_data[y][x];
 	
 }
 
