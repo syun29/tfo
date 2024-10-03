@@ -4,6 +4,7 @@
 #include "Field.h"
 #include "Door.h"
 #include "Areachange.h"
+#include "Game.h"
 void Player::StateIdle()
 {
 	//ˆÚ“®—Ê
@@ -56,7 +57,7 @@ void Player::StateIdle()
 	}
 		if (PUSH(CInput::eButton5)) {
 			m_change = !m_change;
-			
+			SOUND("SE_Wall")->Play();
 		}
 	
 	

@@ -42,7 +42,7 @@ Map::Map(int area) : Base(eType_Map)
 		Base::Add(new Door(CVector2D(38 * MAP_TIP_SIZE, 7 * MAP_TIP_SIZE),
 			CVector2D(18 * MAP_TIP_SIZE, 20 * MAP_TIP_SIZE)));
 		Base::Add(new Areachange(CVector2D(15 * MAP_TIP_SIZE, 10 * MAP_TIP_SIZE),
-			CVector2D(2 * MAP_TIP_SIZE, 20 * MAP_TIP_SIZE),
+			CVector2D(2 * MAP_TIP_SIZE, 2 * MAP_TIP_SIZE),
 			2));
 
 		break;
