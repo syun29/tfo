@@ -22,7 +22,7 @@ static int stage2data[MAP_HEIGHT][MAP_WIDTH] = {
 	{ 0,0,0,0,0,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,},
 	{ 0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
 	{ 0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
-	{ 0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
+	{ 0,0,3,0,0,0,0,0,0,3,3,3,0,0,0,0,0,0,0,0,},
 	{ 3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
 	{ 3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
 	{ 3,3,3,0,0,0,0,3,3,3,3,0,0,0,0,0,0,0,0,0,},
@@ -37,11 +37,11 @@ Map::Map(int area) : Base(eType_Map)
 	switch (area) {
 	case 1:
 		memcpy(m_stage_data, stage1data, sizeof(stage1data));
-		Base::Add(new Door(CVector2D(19 * MAP_TIP_SIZE, 21 * MAP_TIP_SIZE),
+		Base::Add(new Door(CVector2D(10 * MAP_TIP_SIZE, 9 * MAP_TIP_SIZE),
 			CVector2D(37 * MAP_TIP_SIZE, 6 * MAP_TIP_SIZE)));
 		Base::Add(new Door(CVector2D(38 * MAP_TIP_SIZE, 7 * MAP_TIP_SIZE),
 			CVector2D(18 * MAP_TIP_SIZE, 20 * MAP_TIP_SIZE)));
-		Base::Add(new Areachange(CVector2D(38 * MAP_TIP_SIZE, 21 * MAP_TIP_SIZE),
+		Base::Add(new Areachange(CVector2D(20 * MAP_TIP_SIZE, 10 * MAP_TIP_SIZE),
 			CVector2D(2 * MAP_TIP_SIZE, 20 * MAP_TIP_SIZE),
 			2));
 

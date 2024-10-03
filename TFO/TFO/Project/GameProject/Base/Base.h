@@ -53,7 +53,7 @@ public:
     /// コンストラクタ
     /// </summary>
     Base(int type);
-    Base(BaseType type);
+  
     /// <summary>
     /// デストラクタ
     /// </summary>

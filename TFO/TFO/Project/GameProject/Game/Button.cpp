@@ -1,7 +1,7 @@
 #include "Button.h"
 #include "AnimeData.h"
 
-Button::Button(BaseType type, const CVector2D& p) : Base(type)
+Button::Button(int type, const CVector2D& p) : Base(eType_Button)
 {
 	//画像複製
 	m_img = COPY_RESOURCE("Button", CImage);
@@ -20,17 +20,17 @@ Button::Button(BaseType type, const CVector2D& p) : Base(type)
 
 void Button::Update()
 {
-	if (m_switch == false)
+	/*if (m_switch == false)
 		m_img.ChangeAnimation(eAnimIdle);
 	if (m_switch == true)
 		m_img.ChangeAnimation(eAnimWalk);
 	//アニメーション更新
-	m_img.UpdateAnimation();
+	m_img.UpdateAnimation();*/
 }
 
 void Button::Draw()
 {
-	Base::DrawImage();
+	
 }
 
 void Button::Collision(Base* b)

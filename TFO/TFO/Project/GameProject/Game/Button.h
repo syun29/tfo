@@ -5,7 +5,7 @@ private:
 	//ŠÔ
 	int m_time;
 public:
-	Button(BaseType type, const CVector2D& p);
+	Button(int type, const CVector2D& p);
 	void Update();
 	void Draw();
 	//“–‚½‚è”»’èŒŸØ
