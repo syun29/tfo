@@ -57,11 +57,20 @@ Map::Map(int area) : Base(eType_Map)
 
 void Map::Draw()
 {
+
+	int sx = m_scroll.x / MAP_TIP_SIZE;
+	if (sx < 0) sx = 0;
+	int ex = sx + 10;
+	if (ex > MAP_WIDTH) ex = MAP_WIDTH;
+	int sy = m_scroll.y / MAP_TIP_SIZE;
+	if (sy < 0) sy = 0;
+	int ey = sy + 10;
+	if (ey > MAP_HEIGHT) ey = MAP_HEIGHT;
 	for (int i = 0; i < MAP_HEIGHT; i++) {
 		for (int j = 0; j < MAP_WIDTH; j++) {
 			//表示しない制御
-			if (stage1data[i][j] == 0)continue;
-			int t = stage1data[i][j];
+			if (m_stage_data[i][j] == 0)continue;
+			int t = m_stage_data[i][j];
 			//画像切り抜き
 			m_img.SetRect(32 * t, 0, 32 * t + 32, 32);
 			//表示サイズ設定
