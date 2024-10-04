@@ -11,5 +11,7 @@ public:
 	//“–‚½‚è”»’èŒŸØ
 	void Collision(Base* b);
 	int m_flip;
+	Button(int m_time, int m_flip);
+	
 };
 
