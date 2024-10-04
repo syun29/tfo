@@ -18,6 +18,8 @@ Game::Game() :Base(eType_Scene)
 	Base::Add(new Player(CVector2D(500, 100), false, false));
 
 	Base::Add(new Map(1));
+
+	Base::Add((new Button(eType_Button1, CVector2D(1650,266))));
 }
 
 Game::~Game()

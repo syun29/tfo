@@ -76,7 +76,7 @@ void Init(void)
 	Base::Add(new Field());
 
 	//---ŽR–{----
-	ADD_RESOURCE("Button", CImage::CreateImage("Image/Button.png"));
+	ADD_RESOURCE("Button", CImage::CreateImage("Image/Botan.png"));
 
 
 
