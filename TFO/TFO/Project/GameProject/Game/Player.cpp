@@ -150,10 +150,13 @@ void Player::Collision(Base* b)
 					Base::Kill(
 						 1 << eType_Areachange
 						| 1 << eType_Door
+						| 1 <<eType_Map
 						| 1 << eType_Goal);
 
 					m_pos_old = m_pos = s->GetNextPos();
 					Base::Add(new Map(s->GetNextArea()));
+					
+
 				}
 			}
 		}
