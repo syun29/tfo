@@ -5,7 +5,7 @@
 #include "Game/Field.h"
 #include "Game/Map.h"
 #include "Game/Game.h"
-
+#include"Game/Button.h"
 
 //--------------------------------------------
 //グローバル変数領域
@@ -66,7 +66,7 @@ void Init(void)
 	//---矢代----
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/amongAs2.png", player_anim_data, 32, 32));
 	ADD_RESOURCE("haikei", CImage::CreateImage("Image/haikei1.png"));
-	ADD_RESOURCE("Door", CImage::CreateImage("Image/Door.png"));
+	ADD_RESOURCE("Door", CImage::CreateImage("Image/door1.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/End (Idle).png"));
 	
 
@@ -76,11 +76,11 @@ void Init(void)
 	Base::Add(new Field());
 
 	//---山本----
+	ADD_RESOURCE("Button", CImage::CreateImage("Image/Button.png"));
 
 
 
-
-
+	
 
 	//---伏石-----
 
