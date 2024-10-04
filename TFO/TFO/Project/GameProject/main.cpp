@@ -66,7 +66,7 @@ void Init(void)
 	//---–î‘ã----
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/amongAs2.png", player_anim_data, 32, 32));
 	ADD_RESOURCE("haikei", CImage::CreateImage("Image/haikei1.png"));
-	ADD_RESOURCE("Door", CImage::CreateImage("Image/Door.png"));
+	ADD_RESOURCE("Door", CImage::CreateImage("Image/door1.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/End (Idle).png"));
 	
 
