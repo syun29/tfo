@@ -5,7 +5,7 @@
 #include "Game/Field.h"
 #include "Game/Map.h"
 #include "Game/Game.h"
-
+#include"Game/Button.h"
 
 //--------------------------------------------
 //グローバル変数領域
@@ -76,11 +76,11 @@ void Init(void)
 	Base::Add(new Field());
 
 	//---山本----
+	ADD_RESOURCE("Button", CImage::CreateImage("Image/Button.png"));
 
 
 
-
-
+	Base::Add(new Button());
 
 	//---伏石-----
 
