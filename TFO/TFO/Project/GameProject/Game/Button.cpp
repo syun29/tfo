@@ -2,7 +2,7 @@
 #include "AnimeData.h"
 #include "gimmick.h"
 
-Button::Button(int type, const CVector2D& p) : Base(eType_Button)
+Button::Button(int type, const CVector2D& p) : Base(eType_Button1)
 {
 	//‰æ‘œ•¡»
 	m_img = COPY_RESOURCE("Button", CImage);

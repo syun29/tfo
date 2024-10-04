@@ -45,3 +45,14 @@ TexAnimData player_anim_data[] = {
 	ANIMDATA(playerJumpUp),
 	ANIMDATA(playerJumpDown),
 };
+
+static TexAnim bottunIdle[] = {
+	{0,2},
+};
+static TexAnim bottunWalk[] = {
+	{1,2},
+};
+TexAnimData bottun_anim_data[] = {
+	ANIMDATA(bottunIdle),
+	ANIMDATA(bottunWalk),
+};
