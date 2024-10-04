@@ -7,6 +7,7 @@ enum {
 	eAnimRun,
 	eAnimJumpUp,
 	eAnimJumpDown,
+	eAnimWalk,
 	eAnimAttack01,
 	eAnimAttack01End,
 	eAnimAttack02,
@@ -33,9 +34,4 @@ enum {
 //プレイヤーのアニメーションデータ
 extern TexAnimData player_anim_data[];
 //敵のアニメーションデータ
-extern TexAnimData enemy_anim_data[];
-//エフェクトのアニメーションデータ
-extern TexAnimData effect_blood_anim_data[];
-extern TexAnimData effect_smoke_anim_data[];
-extern TexAnimData effect_slash_anim_data[];
-extern TexAnimData effect_bomb_anim_data[];
+extern TexAnimData bottun_anim_data[];
