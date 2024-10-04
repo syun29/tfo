@@ -80,7 +80,7 @@ void Init(void)
 
 
 
-	Base::Add(new Button());
+	
 
 	//---•šÎ-----
 
