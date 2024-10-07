@@ -1,11 +1,12 @@
 #include "Game/AnimeData.h"
 #include "Base/Base.h"
-#include "Game/Player.h"
+
 #include "Game/Door.h"
 #include "Game/Field.h"
 #include "Game/Map.h"
 #include "Game/Game.h"
 #include"Game/Button.h"
+#include "Game/Player.h"
 
 //--------------------------------------------
 //グローバル変数領域
@@ -76,7 +77,7 @@ void Init(void)
 	Base::Add(new Field());
 
 	//---山本----
-	ADD_RESOURCE("Button", CImage::CreateImage("Image/Botan.png"));
+	ADD_RESOURCE("Button", CImage::CreateImage("Image/Botan.png",bottun_anim_data,64,64));
 
 
 

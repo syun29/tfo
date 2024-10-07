@@ -2,8 +2,13 @@
 #include "../Base/Base.h"
 class Button : public Base {
 private:
+	enum {
+		eAnimOF,
+		eAnimON
+	};
 	//ŽžŠÔ
 	int m_time;
+	int m_cnt;
 public:
 	Button(int type, const CVector2D& p);
 	void Update();
