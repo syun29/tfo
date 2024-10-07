@@ -5,6 +5,7 @@
 #include "Door.h"
 #include "Areachange.h"
 #include "Game.h"
+#include "Button.h"
 void Player::StateIdle()
 {
 	//ˆÚ“®—Ê
