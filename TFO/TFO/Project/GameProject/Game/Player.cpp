@@ -159,7 +159,7 @@ void Player::Collision(Base* b)
 					m_pos_old = m_pos = s->GetNextPos();
 					Base::Add(new Map(s->GetNextArea()));
 					Base::Add(new Player(CVector2D(200, 850), false, true));
-					Base::Add(new Player(CVector2D(200, 250), false, false));
+					Base::Add(new Player(CVector2D(150, 850), false, false));
 
 				}
 			}
