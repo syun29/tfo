@@ -34,7 +34,7 @@ void Player::StateIdle()
 	//ジャンプ
 	if (m_change && m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;
-		m_is_ground = false;
+		m_is_ground = true;
 	}
 	//ジャンプ中なら
 	if (!m_is_ground) {
@@ -122,6 +122,7 @@ void Player::Update()
 
 void Player::Draw()
 {
+	m_cnt++;
 	//位置設定
 	m_img.SetPos(GetScreenPos(m_pos));
 	//反転設定
@@ -145,18 +146,19 @@ void Player::Collision(Base* b)
 		}
 		break;*/
 	case eType_Areachange:
-		if (PUSH(CInput::eUp)) {
+		if (m_switch == false && PUSH(CInput::eUp)) {
 			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
 				if (Base::CollisionRect(this, s)) {
 					Base::Kill(
-						 1 << eType_Areachange
+						1 << eType_Areachange
+						| 1 << eType_Player
 						| 1 << eType_Door
-						| 1 <<eType_Map
+						| 1 << eType_Map
 						| 1 << eType_Goal);
 
 					m_pos_old = m_pos = s->GetNextPos();
 					Base::Add(new Map(s->GetNextArea()));
-					
+
 
 				}
 			}
@@ -194,6 +196,10 @@ void Player::Collision(Base* b)
 			}
 		}
 		break;
-	}
+
 	
+	}
 }
+
+
+
