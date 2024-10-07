@@ -48,9 +48,10 @@ void Button::Collision(Base* b)
 	switch (b->m_type)
 	{
 	case eType_Player:
-		if (m_cnt>=180&&CollisionRect(this, b))
+		if (m_cnt>=300&&CollisionRect(this, b))
 		{
 			m_switch = !m_switch;
+			
 			m_cnt = 0;
 		}
 		break;

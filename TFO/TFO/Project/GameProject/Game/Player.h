@@ -21,6 +21,7 @@ private:
 	bool m_change;
 	//ヒットポイント
 	int m_hp;
+	int m_cnt;
 	//各状態での挙動
 	void StateIdle();
 	void StateDamage();
