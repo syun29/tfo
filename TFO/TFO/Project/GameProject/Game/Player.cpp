@@ -35,6 +35,7 @@ void Player::StateIdle()
 	//ジャンプ
 	if (m_change && m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;
+		
 		m_is_ground = true;
 	}
 	//ジャンプ中なら
@@ -161,7 +162,7 @@ void Player::Collision(Base* b)
 					Base::Add(new Map(s->GetNextArea()));
 					Base::Add(new Player(CVector2D(200, 850), false, true));
 					Base::Add(new Player(CVector2D(150, 850), false, false));
-					Base::Add(new Goal(CVector2D(150, 850)));
+					    Base::Add(new Goal(CVector2D(150, 850)));
 				}
 			}
 		}
@@ -199,7 +200,7 @@ void Player::Collision(Base* b)
 		}
 		break;
 
-		switch (b->m_type) {
+		
 			//ゴール判定
 		case eType_Goal:
 			if (Base::CollisionRect(this, b)) {
