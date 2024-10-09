@@ -56,3 +56,13 @@ TexAnimData bottun_anim_data[] = {
 	ANIMDATA(bottunIdle),
 	ANIMDATA(bottunWalk),
 };
+static TexAnim gimmickIdle[] = {
+	{0,2},
+};
+static TexAnim gimmickWalk[] = {
+	{1,2},
+};
+TexAnimData gimmick_anim_data[] = {
+	ANIMDATA(gimmickIdle),
+	ANIMDATA(gimmickWalk),
+};

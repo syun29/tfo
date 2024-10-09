@@ -35,3 +35,4 @@ enum {
 extern TexAnimData player_anim_data[];
 //敵のアニメーションデータ
 extern TexAnimData bottun_anim_data[];
+extern TexAnimData gimmick_anim_data[];

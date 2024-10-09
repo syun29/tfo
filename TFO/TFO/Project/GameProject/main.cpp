@@ -78,7 +78,7 @@ void Init(void)
 
 	//---ŽR–{----
 	ADD_RESOURCE("Button", CImage::CreateImage("Image/Botan.png",bottun_anim_data,64,64));
-
+	ADD_RESOURCE("Button", CImage::CreateImage("Image/dosuun.png", gimmick_anim_data, 64, 64));
 
 
 	
