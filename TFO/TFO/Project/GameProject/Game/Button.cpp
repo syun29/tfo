@@ -57,3 +57,5 @@ void Button::Collision(Base* b)
 		break;
 	}
 }
+
+
