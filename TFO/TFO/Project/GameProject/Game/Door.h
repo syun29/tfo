@@ -7,10 +7,11 @@ private:
 	//ˆÚ“®ˆÊ’u
 	CVector2D m_next_pos;
 public:
+	int m_cnt;
 	Door(const CVector2D& pos, const CVector2D& next);
 	void Draw();
 	CVector2D GetNextPos() {
 		return m_next_pos;
 	}
-
+	
 };

@@ -2,13 +2,13 @@
 
 Areachange::Areachange(const CVector2D& pos, const CVector2D& next, int next_area):Base(eType_Areachange)
 {
-	m_img = COPY_RESOURCE("Goal", CImage);
-	m_img.SetCenter(32, 128);
+	m_img = COPY_RESOURCE("Door", CImage);
+	m_img.SetCenter(64, 128);
 	m_pos = pos;
 	m_next_pos = next;
 	m_next_area = next_area;
-	m_rect = CRect(-32, -128, 32, 0);
-	m_img.SetSize(64, 128);
+	m_rect = CRect(-64, -128, 64, 0);
+	m_img.SetSize(100, 128);
 }
 
 void Areachange::Draw()
