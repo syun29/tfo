@@ -148,23 +148,23 @@ void Player::Collision(Base* b)
 		};
 		break;
 	case eType_Areachange:
-		if ( PUSH(CInput::eUp)) {
+		if (PUSH(CInput::eUp)) {
 			Button* bt = dynamic_cast<Button*>(Base::FindObject(eType_Button1));
 			if (bt->m_switch == true) {
 				if (Areachange* s = dynamic_cast<Areachange*>(b)) {
 					if (Base::CollisionRect(this, s)) {
 						Base::Kill(
 							1 << eType_Areachange
-							
+
 							| 1 << eType_Button1
 							| 1 << eType_Player
 							| 1 << eType_Door
 							| 1 << eType_Map
 							| 1 << eType_Goal);
 
-						
+
 					}
-		
+
 					break;
 	case eType_Map:
 		if (Map* m = dynamic_cast<Map*>(b)) {
@@ -196,7 +196,7 @@ void Player::Collision(Base* b)
 				//Ý’uƒtƒ‰ƒOON
 				m_is_ground = true;
 			}
-			if (m_pos.y >1000) {
+			if (m_pos.y > 1000) {
 				SetKill();
 			}
 		}
@@ -207,9 +207,11 @@ void Player::Collision(Base* b)
 	case eType_Goal:
 		if (Base::CollisionRect(this, b)) {
 			b->SetKill();
+
+			break;
+
+
 		}
-		break;
-
-
-	}
-}
+				}
+			}
+		}
