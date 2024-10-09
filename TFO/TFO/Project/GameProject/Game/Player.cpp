@@ -146,21 +146,24 @@ void Player::Collision(Base* b)
 		}
 		break;*/
 	case eType_Areachange:
-		if (m_switch == false && PUSH(CInput::eUp)) {
-			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
-				if (Base::CollisionRect(this, s)) {
-					Base::Kill(
-						1 << eType_Areachange
-						| 1 << eType_Player
-						| 1 << eType_Door
-						| 1 << eType_Map
-						| 1 << eType_Goal);
+		if ( PUSH(CInput::eUp)) {
+			Button* bt = dynamic_cast<Button*>(Base::FindObject(eType_Button1));
+			if (bt->m_switch == false) {
+				if (Areachange* s = dynamic_cast<Areachange*>(b)) {
+					if (Base::CollisionRect(this, s)) {
+						Base::Kill(
+							1 << eType_Areachange
+							| 1 << eType_Player
+							| 1 << eType_Door
+							| 1 << eType_Map
+							| 1 << eType_Goal);
 
-					m_pos_old = m_pos = s->GetNextPos();
-					Base::Add(new Map(s->GetNextArea()));
-					Base::Add(new Player(CVector2D(200, 850), false, true));
-					Base::Add(new Player(CVector2D(150, 850), false, false));
+						m_pos_old = m_pos = s->GetNextPos();
+						Base::Add(new Map(s->GetNextArea()));
+						Base::Add(new Player(CVector2D(200, 850), false, true));
+						Base::Add(new Player(CVector2D(150, 850), false, false));
 
+					}
 				}
 			}
 		}
