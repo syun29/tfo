@@ -12,6 +12,7 @@ gimmick::gimmick(const CVector2D& p, bool flip) :
 	m_img.SetCenter(128, 224);
 	//”½“]ƒtƒ‰ƒO
 	m_flip = flip;
+}
 	
 
 void gimmick::StateIdle()
