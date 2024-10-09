@@ -13,5 +13,5 @@ public:
 	CVector2D GetNextPos() {
 		return m_next_pos;
 	}
-	void Collision(Base* b);
+	
 };
