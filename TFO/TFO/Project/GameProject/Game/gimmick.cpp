@@ -4,13 +4,6 @@ void gimmick::StateIdle()
 {
 }
 
-void gimmick::StateDamage()
-{
-}
-
-void gimmick::StateDown()
-{
-}
 
 gimmick::gimmick(const CVector2D& p, bool flip):Base(eType_gimmick)
 {
