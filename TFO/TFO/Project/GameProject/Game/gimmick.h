@@ -20,6 +20,9 @@ private:
 	bool m_change;
 	//ヒットポイント
 	int m_hp;
+	int eState_Attack;
+	int m_attack_no;
+	int eState;
 	//各状態での挙動
 	void StateIdle();
 	void StateDamage();
