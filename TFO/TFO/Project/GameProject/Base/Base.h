@@ -45,7 +45,7 @@ public:
     //スクロール値
     static CVector2D m_scroll;
     bool m_switch;
-    int m_cntb;
+   
     CImage m_img;
 
 
