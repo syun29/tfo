@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "Door.h"
 #include "Button.h"
+#include "Goal.h"
 
 Game::Game() :Base(eType_Scene)
 {
@@ -20,6 +21,8 @@ Game::Game() :Base(eType_Scene)
 	Base::Add(new Map(1));
 
 	Base::Add((new Button(eType_Button1, CVector2D(1650,266))));
+
+	Base::Add(new Goal(CVector2D(512, 540)));
 }
 
 Game::~Game()

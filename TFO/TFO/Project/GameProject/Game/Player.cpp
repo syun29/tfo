@@ -6,6 +6,7 @@
 #include "Areachange.h"
 #include "Game.h"
 #include "Button.h"
+#include "Goal.h"
 void Player::StateIdle()
 {
 	//ˆÚ“®—Ê
@@ -136,15 +137,15 @@ void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
 		//ƒhƒA
-	/*case eType_Door:
+	case eType_Door:
 		if (PUSH(CInput::eUp)) {
 			if (Door* s = dynamic_cast<Door*>(b)) {
 				if (Base::CollisionRect(this, s)) {
 					m_pos_old = m_pos = s->GetNextPos();
 				}
 			}
-		}
-		break;*/
+		};
+		break;
 	case eType_Areachange:
 		if (m_switch == false && PUSH(CInput::eUp)) {
 			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
@@ -160,7 +161,7 @@ void Player::Collision(Base* b)
 					Base::Add(new Map(s->GetNextArea()));
 					Base::Add(new Player(CVector2D(200, 850), false, true));
 					Base::Add(new Player(CVector2D(150, 850), false, false));
-
+					Base::Add(new Goal(CVector2D(150, 850)));
 				}
 			}
 		}
@@ -198,7 +199,15 @@ void Player::Collision(Base* b)
 		}
 		break;
 
-	
+		switch (b->m_type) {
+			//ƒS[ƒ‹”»’è
+		case eType_Goal:
+			if (Base::CollisionRect(this, b)) {
+				b->SetKill();
+			}
+			break;
+
+		
 	}
 }
 
