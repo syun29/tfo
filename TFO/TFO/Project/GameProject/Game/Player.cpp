@@ -148,11 +148,12 @@ void Player::Collision(Base* b)
 	case eType_Areachange:
 		if ( PUSH(CInput::eUp)) {
 			Button* bt = dynamic_cast<Button*>(Base::FindObject(eType_Button1));
-			if (bt->m_switch == false) {
+			if (bt->m_switch == true) {
 				if (Areachange* s = dynamic_cast<Areachange*>(b)) {
 					if (Base::CollisionRect(this, s)) {
 						Base::Kill(
 							1 << eType_Areachange
+							| 1<< eType_Button1
 							| 1 << eType_Player
 							| 1 << eType_Door
 							| 1 << eType_Map
