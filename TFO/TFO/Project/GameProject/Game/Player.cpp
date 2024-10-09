@@ -36,7 +36,8 @@ void Player::StateIdle()
 	if (m_change && m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;
 		
-		m_is_ground = false;
+
+		m_is_ground = true;
 	}
 	//ジャンプ中なら
 	if (!m_is_ground) {
@@ -160,11 +161,25 @@ void Player::Collision(Base* b)
 							| 1 << eType_Door
 							| 1 << eType_Map
 							| 1 << eType_Goal);
+		if (m_switch == false && PUSH(CInput::eUp)) {
+			if (Areachange* s = dynamic_cast<Areachange*>(b)) {
+				if (Base::CollisionRect(this, s)) {
+					Base::Kill(
+						1 << eType_Areachange
+						| 1 << eType_Player
+						| 1 << eType_Door
+						| 1 << eType_Map
+						| 1 << eType_Goal);
 
 						m_pos_old = m_pos = s->GetNextPos();
 						Base::Add(new Map(s->GetNextArea()));
 						Base::Add(new Player(CVector2D(200, 850), false, true));
 						Base::Add(new Player(CVector2D(150, 850), false, false));
+					m_pos_old = m_pos = s->GetNextPos();
+					Base::Add(new Map(s->GetNextArea()));
+					Base::Add(new Player(CVector2D(200, 850), false, true));
+					Base::Add(new Player(CVector2D(150, 850), false, false));
+			
 					    Base::Add(new Goal(CVector2D(150, 850)));//iyiyiyiy
 					}
 				}
@@ -200,9 +215,6 @@ void Player::Collision(Base* b)
 				m_vec.y = 0;
 				//設置フラグON
 				m_is_ground = true;
-			}
-			if (m_pos.y >1000) {
-				SetKill();
 			}
 		}
 		break;
