@@ -34,7 +34,7 @@ void Player::StateIdle()
 	//ジャンプ
 	if (m_change && m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;
-		m_is_ground = true;
+		m_is_ground = false;
 	}
 	//ジャンプ中なら
 	if (!m_is_ground) {
@@ -198,6 +198,9 @@ void Player::Collision(Base* b)
 				m_vec.y = 0;
 				//設置フラグON
 				m_is_ground = true;
+			}
+			if (m_pos.y >1000) {
+				SetKill();
 			}
 		}
 		break;
