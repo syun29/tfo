@@ -56,7 +56,7 @@ Map::Map(int area) : Base(eType_Map)
 		Base::Add(new Areachange(CVector2D(15 * MAP_TIP_SIZE, 9 * MAP_TIP_SIZE),
 			CVector2D(2 * MAP_TIP_SIZE, 2 * MAP_TIP_SIZE),
 			2));
-
+		//‚ ‚¢‚¤‚¦‚¨
 		break;
 	case 2:
 		memcpy(m_stage_data, stage2data, sizeof(stage2data));
