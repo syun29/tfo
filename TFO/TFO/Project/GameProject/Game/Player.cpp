@@ -91,7 +91,7 @@ Player::Player(const CVector2D& p, bool flip,bool change) :Base(eType_Player)
 	//ダメージ番号
 	m_damage_no = -1;
 	//ヒットポイント
-	m_hp = 100;
+	
 	m_change = change;
 }
 
@@ -217,15 +217,8 @@ void Player::Collision(Base* b)
 		break;
 
 
-
-	case eType_gimmick:
-		if (Base::CollisionRect(this, b)) {
-			b->SetKill();
-		}
-		break;
-
-
 	}
+	
 }
 
 

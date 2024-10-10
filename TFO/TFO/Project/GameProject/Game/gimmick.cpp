@@ -75,21 +75,12 @@ void gimmick::Collision(Base* b)
 {
     switch (b->m_type) {
         //攻撃オブジェクトとの判定
-    case eType_Player_Attack:
-        //Slash型へキャスト、型変換できたら
-        
-                //ダメージ処理
-                m_hp -= 50;
-                if (m_hp <= 0) {
-                    m_state = eState_Down;
-                }
-                else {
-                    m_state = eState_Damage;
-                }
-             
-            }
+    case eType_Player:
+
+        if (Base::CollisionRect(this, b)) {
+            b->SetKill();
         }
-        
+        break;
 
-
-
+    }
+}
