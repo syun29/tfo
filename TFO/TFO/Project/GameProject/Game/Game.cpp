@@ -12,7 +12,7 @@ Game::Game() :Base(eType_Scene)
 	SOUND("SE_Wall")->Load("Sound/kirikae.wav", 10);
 	
 
-
+	Base::Add(new Field());
 
 	Base::Add(new Player(CVector2D(200, 850), false, true));
 

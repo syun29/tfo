@@ -7,6 +7,7 @@
 #include "Game/Game.h"
 #include"Game/Button.h"
 #include "Game/Player.h"
+#include "Title/Title.h"
 
 //--------------------------------------------
 //グローバル変数領域
@@ -69,12 +70,14 @@ void Init(void)
 	ADD_RESOURCE("haikei", CImage::CreateImage("Image/haikei1.png"));
 	ADD_RESOURCE("Door", CImage::CreateImage("Image/door1.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/End (Idle).png"));
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));
 	
 
+
+	Base::Add(new Title());
+
+
 	
-
-
-	Base::Add(new Field());
 
 	//---山本----
 	ADD_RESOURCE("Button", CImage::CreateImage("Image/Botan.png",bottun_anim_data,64,64));
