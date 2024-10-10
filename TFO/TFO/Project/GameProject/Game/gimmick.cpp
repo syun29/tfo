@@ -1,7 +1,7 @@
 #include"gimmick.h"
 #include"AnimeData.h"
 
-gimmick::gimmick(const CVector2D& p, bool flip) :
+gimmick::gimmick(const CVector2D& p, bool flip, bool fall) :
 	Base(eType_gimmick) {
 	//画像複製
 	m_img = COPY_RESOURCE("dossun", CImage);
@@ -14,26 +14,43 @@ gimmick::gimmick(const CVector2D& p, bool flip) :
     m_img.SetSize(126, 122);
 	//反転フラグ
 	m_flip = flip;
+    
 }
 	
 
 void gimmick::StateIdle()
 {
-//移動量
-const float move_speed = 6;
+    const float move_speed = 15;
 //移動フラグ
 bool move_flag = false;
 Base* player = Base::FindObject(eType_Player);
 if (player) {
     CVector2D v = player->m_pos - m_pos;
     if (abs(v.x) < 128) {
-        m_state = eState_Attack;
+        if (m_fall) {
+            m_pos.y -= move_speed;
+        }
+        if (!m_fall) {
+            m_pos.y += move_speed;
+        }
     }
 
 }
 
 
 }
+
+/*void gimmick::StateAttack()
+{
+    //移動量
+    const float move_speed = 6;
+    if (m_fall) {
+        m_pos.y -= move_speed;
+    }
+    if (!m_fall) {
+        m_pos.y += move_speed;
+    }
+}*/
 
 
 void gimmick::Update()
