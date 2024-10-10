@@ -6,8 +6,7 @@ private:
 	enum {
 		eState_Idle,
 		eState_Attack,
-		eState_Damage,
-		eState_Down,
+		
 	};
 	//ó‘Ô•Ï”
 	int m_state;
@@ -24,12 +23,13 @@ private:
 	
 	int m_attack_no;
 	int eState;
+	bool m_fall;
 	//Šeó‘Ô‚Å‚Ì‹““®
 	void StateIdle();
-	void StateDamage();
-	void StateDown();
+	void StateAttack();
+	
 public:
-	gimmick(const CVector2D& p, bool flip);
+	gimmick(const CVector2D& p, bool flip,bool fall);
 	void Update();
 	void Draw();
 	void Collision(Base* b);
