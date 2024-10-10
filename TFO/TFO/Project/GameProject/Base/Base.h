@@ -16,8 +16,9 @@ enum {
     eType_UI,
     eType_Scene,
     eType_Map,
-    eType_gimmick,
+    eType_gimmick1,
     eType_Button1,
+    eType_gimmick,
 };
 //èdóÕâ¡ë¨ìx
 #define GRAVITY (9.8f/20)
