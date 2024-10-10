@@ -176,7 +176,7 @@ void Player::Collision(Base* b)
 						Base::Add(new Map(s->GetNextArea()));
 						Base::Add(new Player(CVector2D(200, 850), false, true));
 						Base::Add(new Player(CVector2D(150, 850), false, false));
-						Base::Add(new Goal(CVector2D(550, 850)));
+						Base::Add(new Goal(CVector2D(1850, 870)));
 						Base::Add((new gimmick(CVector2D(1550, 300), false)));
 						Base::Add((new gimmick(CVector2D(750, 300), false)));
 					}

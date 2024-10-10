@@ -49,7 +49,7 @@ Map::Map(int area) : Base(eType_Map)
 		break;
 	case 2:
 		memcpy(m_stage_data, stage2data, sizeof(stage2data));
-		Base::Add(new Goal(CVector2D(38 * MAP_TIP_SIZE, 21 * MAP_TIP_SIZE)));
+		//Base::Add(new Goal(CVector2D(38 * MAP_TIP_SIZE, 21 * MAP_TIP_SIZE)));
 		break;
 	}
 	
