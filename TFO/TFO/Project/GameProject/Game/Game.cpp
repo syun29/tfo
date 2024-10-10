@@ -24,11 +24,11 @@ Game::Game() :Base(eType_Scene)
 
 	Base::Add((new Button(eType_Button1, CVector2D(1650,266))));
 
-	Base::Add((new gimmick( CVector2D(600,500),false,true)));
+	Base::Add((new gimmick( CVector2D(600,500),false)));
 	
-	Base::Add((new gimmick(CVector2D(800, 500), false,true)));
-	Base::Add((new gimmick(CVector2D(1300, 1000), false,false)));
-
+	Base::Add((new gimmick(CVector2D(800, 500), false)));
+	
+	
 	
 
 }

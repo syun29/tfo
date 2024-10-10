@@ -5,6 +5,7 @@
 #include "Door.h"
 #include "Areachange.h"
 #include "Game.h"
+#include "gimmick.h"
 #include "Button.h"
 #include "Goal.h"
 void Player::StateIdle()
@@ -137,6 +138,14 @@ void Player::Draw()
 void Player::Collision(Base* b)
 {
 	switch (b->m_type) {
+		//ゴール判定
+	case eType_Goal:
+		if (Base::CollisionRect(this, b)) {
+			if (Goal* g = dynamic_cast<Goal*>(b))
+				g->SetGoal();
+		}
+		break;
+
 		//ドア
 	/*case eType_Door:
 		if (PUSH(CInput::eUp)) {
@@ -161,14 +170,15 @@ void Player::Collision(Base* b)
 							| 1 << eType_gimmick
 							| 1 << eType_Door
 							| 1 << eType_Map
-							| 1 << eType_Goal);
+							);
 
 						m_pos_old = m_pos = s->GetNextPos();
 						Base::Add(new Map(s->GetNextArea()));
 						Base::Add(new Player(CVector2D(200, 850), false, true));
 						Base::Add(new Player(CVector2D(150, 850), false, false));
-						
-						Base::Add(new Goal(CVector2D(1850, 850)));
+						Base::Add(new Goal(CVector2D(550, 850)));
+						Base::Add((new gimmick(CVector2D(1550, 300), false)));
+						Base::Add((new gimmick(CVector2D(750, 300), false)));
 					}
 				}
 			}
@@ -211,13 +221,7 @@ void Player::Collision(Base* b)
 		break;
 
 
-		//ゴール判定
-	case eType_Goal:
-		if (Base::CollisionRect(this, b)) {
-			b->SetKill();
-		}
-		break;
-
+		
 
 	}
 	
