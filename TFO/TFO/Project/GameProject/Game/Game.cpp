@@ -5,7 +5,6 @@
 #include "Door.h"
 #include "Button.h"
 #include "Goal.h"
-#include"gimmick.h"
 
 Game::Game() :Base(eType_Scene)
 {
@@ -32,4 +31,20 @@ Game::~Game()
 
 void Game::Update()
 {
+	if (Base* b = Base::FindObject(eType_Goal)) {
+		Goal* g = dynamic_cast<Goal*>(b);
+		if (g->GetGoal()) {
+			//全てのオブジェクトを破棄
+			Base::KillAll();
+			//タイトルシーンへ
+			Base::Add(new Title());
+		}
+	}
+	//プレイヤー死亡　ボタン1でゲームシーン終了
+	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
+		//すべてのオブジェクトを破棄
+		Base::KillAll();
+		//タイトルシーンへ
+		Base::Add(new Title());
+	}
 }

@@ -2,7 +2,7 @@
 #include "../Base/Base.h"
 #include "Game/Map.h"
 
-#define MAP_WIDTH    20
+#define MAP_WIDTH    2
 #define MAP_HEIGHT		12
 #define MAP_TIP_SIZE	100
 
