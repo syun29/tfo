@@ -27,6 +27,9 @@ Game::Game() :Base(eType_Scene)
 	Base::Add((new gimmick( CVector2D(600,500),false)));
 	Base::Add((new gimmick(CVector2D(600, 500), false)));
 	Base::Add((new gimmick(CVector2D(600, 500), false)));
+
+	Base::Add(new Goal(CVector2D(512, 740)));
+
 }
 
 Game::~Game()
