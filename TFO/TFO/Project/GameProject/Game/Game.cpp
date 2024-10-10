@@ -4,7 +4,9 @@
 #include "Map.h"
 #include "Door.h"
 #include "Button.h"
+#include "Title/Title.h"
 #include "Goal.h"
+#include "gimmick.h"
 
 Game::Game() :Base(eType_Scene)
 {
@@ -22,8 +24,8 @@ Game::Game() :Base(eType_Scene)
 
 	Base::Add((new Button(eType_Button1, CVector2D(1650,266))));
 
-	Base::Add((new gimmick(eType_gimmick1, CVector2D(150,600))));
-}aaa
+	Base::Add((new gimmick( CVector2D(150,600),false)));
+}
 
 Game::~Game()
 {
