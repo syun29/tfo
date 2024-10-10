@@ -24,7 +24,7 @@ Game::Game() :Base(eType_Scene)
 	Base::Add((new Button(eType_Button1, CVector2D(1650,266))));
 
 	Base::Add((new gimmick(eType_gimmick1, CVector2D(150,600))));
-}
+}aaa
 
 Game::~Game()
 {
