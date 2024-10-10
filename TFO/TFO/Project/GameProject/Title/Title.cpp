@@ -26,9 +26,7 @@ void Title::Draw()
 			//描画
 			m_img.Draw();
 		
-			m_title_text.Draw(64, 126, 0, 0, 0, "Push SPACE・・・Player change");
-			m_title_text.Draw(64, 512, 0, 0, 0, "Push X・・・ Jump");
-	
+		
 	
 }
 
