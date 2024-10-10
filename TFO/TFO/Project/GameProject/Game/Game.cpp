@@ -22,7 +22,14 @@ Game::Game() :Base(eType_Scene)
 
 	Base::Add((new Button(eType_Button1, CVector2D(1650,266))));
 
-	
+
+
+
+
+	Base::Add(new Goal(CVector2D(540, 740)));
+
+
+
 }
 
 Game::~Game()
