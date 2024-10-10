@@ -67,7 +67,7 @@ void gimmick::Draw()
     //•`‰æ
     m_img.Draw();
     //“–‚½‚è”»’è‹éŒ`‚Ì•\Ž¦
-    // DrawRect();
+     DrawRect();
 
 }
 
