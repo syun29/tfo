@@ -149,14 +149,14 @@ void Player::Collision(Base* b)
 		break;
 		*/
 	case eType_Areachange:
-		if ( PUSH(CInput::eUp)) {
+		if (PUSH(CInput::eUp)) {
 			Button* bt = dynamic_cast<Button*>(Base::FindObject(eType_Button1));
 			if (bt->m_switch == true) {
 				if (Areachange* s = dynamic_cast<Areachange*>(b)) {
 					if (Base::CollisionRect(this, s)) {
 						Base::Kill(
 							1 << eType_Areachange
-							| 1<< eType_Button1
+							| 1 << eType_Button1
 							| 1 << eType_Player
 							| 1 << eType_Door
 							| 1 << eType_Map
@@ -166,7 +166,7 @@ void Player::Collision(Base* b)
 						Base::Add(new Map(s->GetNextArea()));
 						Base::Add(new Player(CVector2D(200, 850), false, true));
 						Base::Add(new Player(CVector2D(150, 850), false, false));
-					    Base::Add(new Goal(CVector2D(150, 850)));//iyiyiyiy
+						Base::Add(new Goal(CVector2D(150, 850)));//iyiyiyiy
 					}
 				}
 			}
@@ -202,21 +202,29 @@ void Player::Collision(Base* b)
 				//設置フラグON
 				m_is_ground = true;
 			}
-			if (m_pos.y >1000) {
+			if (m_pos.y > 1000) {
 				SetKill();
 			}
 		}
 		break;
 
-		
-			//ゴール判定
-		case eType_Goal:
-			if (Base::CollisionRect(this, b)) {
-				b->SetKill();
-			}
-			break;
 
-		
+		//ゴール判定
+	case eType_Goal:
+		if (Base::CollisionRect(this, b)) {
+			b->SetKill();
+		}
+		break;
+
+
+
+	case eType_gimmick:
+		if (Base::CollisionRect(this, b)) {
+			b->SetKill();
+		}
+		break;
+
+
 	}
 }
 
