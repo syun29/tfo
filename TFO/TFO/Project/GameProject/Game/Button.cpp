@@ -53,6 +53,7 @@ void Button::Collision(Base* b)
 			m_switch = !m_switch;
 			
 			m_cnt = 0;
+			
 		}
 		break;
 	}

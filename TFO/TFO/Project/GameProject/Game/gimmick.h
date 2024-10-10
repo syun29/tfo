@@ -5,6 +5,7 @@ private:
 	//状態
 	enum {
 		eState_Idle,
+		eState_Attack,
 		eState_Damage,
 		eState_Down,
 	};
@@ -20,7 +21,7 @@ private:
 	bool m_change;
 	//ヒットポイント
 	int m_hp;
-	int eState_Attack;
+	
 	int m_attack_no;
 	int eState;
 	//各状態での挙動

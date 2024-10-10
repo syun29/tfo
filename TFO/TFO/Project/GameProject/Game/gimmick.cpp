@@ -25,21 +25,9 @@ const float move_speed = 6;
 bool move_flag = false;
 Base* player = Base::FindObject(eType_Player);
 if (player) {
-    //左移動
-    if (player->m_pos.x < m_pos.x - 64) {
-        //移動量を設定
-        m_pos.y += -move_speed;
-        //反転フラグ
-        m_flip = true;
-        move_flag = true;
-    }
-    //右移動
-    if (player->m_pos.x > m_pos.x + 64) {
-        //移動量を設定
-        m_pos.y += move_speed;
-        //反転フラグ
-        m_flip = false;
-        move_flag = true;
+    CVector2D v = player->m_pos - m_pos;
+    if (abs(v.x) < 128) {
+        m_state = eState_Attack;
     }
 
 }
@@ -54,12 +42,15 @@ void gimmick::Update()
         //通常状態
     case eState_Idle:
         StateIdle();
+        break;
+    case eState_Attack:
+        m_vec.y += GRAVITY;
     }
     //落ちていたら落下中状態へ移行
     if (m_is_ground && m_vec.y > GRAVITY * 4)
         m_is_ground = false;
     //重力による落下
-    m_vec.y += GRAVITY;
+  
     m_pos += m_vec;
     //アニメーション更新
     m_img.UpdateAnimation();
