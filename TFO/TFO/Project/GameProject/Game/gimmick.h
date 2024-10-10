@@ -29,7 +29,7 @@ private:
 	void StateAttack();
 	
 public:
-	gimmick(const CVector2D& p, bool flip,bool fall);
+	gimmick(const CVector2D& p, bool flip);
 	void Update();
 	void Draw();
 	void Collision(Base* b);

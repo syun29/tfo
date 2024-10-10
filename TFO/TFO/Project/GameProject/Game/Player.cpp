@@ -5,6 +5,7 @@
 #include "Door.h"
 #include "Areachange.h"
 #include "Game.h"
+#include "gimmick.h"
 #include "Button.h"
 #include "Goal.h"
 void Player::StateIdle()
@@ -168,7 +169,11 @@ void Player::Collision(Base* b)
 						Base::Add(new Player(CVector2D(200, 850), false, true));
 						Base::Add(new Player(CVector2D(150, 850), false, false));
 						
-						Base::Add(new Goal(CVector2D(1850, 850)));
+						Base::Add(new Goal(CVector2D(550, 850)));
+
+
+						Base::Add((new gimmick(CVector2D(1550, 300), false)));
+						Base::Add((new gimmick(CVector2D(750, 300), false)));
 					}
 				}
 			}
@@ -214,7 +219,8 @@ void Player::Collision(Base* b)
 		//ƒS[ƒ‹”»’è
 	case eType_Goal:
 		if (Base::CollisionRect(this, b)) {
-			b->SetKill();
+			if (Goal* g = dynamic_cast<Goal*>(b))
+				g->SetGoal();
 		}
 		break;
 

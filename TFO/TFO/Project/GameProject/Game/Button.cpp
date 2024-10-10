@@ -38,7 +38,7 @@ void Button::Draw()
 	m_img.SetFlipH(m_flip);
 	//•`‰æ
 	m_img.Draw();
-	DrawRect();
+	//DrawRect();
 	
 }
 
