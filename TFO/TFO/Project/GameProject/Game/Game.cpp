@@ -39,6 +39,7 @@ Game::~Game()
 
 void Game::Update()
 {
+
 	if (Base* b = Base::FindObject(eType_Goal)) {
 		Goal* g = dynamic_cast<Goal*>(b);
 		if (g->GetGoal()) {
