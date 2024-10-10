@@ -18,7 +18,7 @@ Game::Game() :Base(eType_Scene)
 
 	Base::Add(new Player(CVector2D(200, 850), false, true));
 
-	Base::Add(new Player(CVector2D(500, 100), false, false));
+	Base::Add(new Player(CVector2D(150, 10), false, false));
 
 	Base::Add(new Map(1));
 
