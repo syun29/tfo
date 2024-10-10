@@ -10,7 +10,8 @@ gimmick::gimmick(const CVector2D& p, bool flip) :
 	//座標設定
 	m_pos = p;
 	//中心位置設定
-	m_img.SetCenter(128, 224);
+	m_img.SetCenter(128, 126);
+    m_img.SetSize(126, 122);
 	//反転フラグ
 	m_flip = flip;
 }
@@ -27,7 +28,7 @@ if (player) {
     //左移動
     if (player->m_pos.x < m_pos.x - 64) {
         //移動量を設定
-        m_pos.x += -move_speed;
+        m_pos.y += -move_speed;
         //反転フラグ
         m_flip = true;
         move_flag = true;
@@ -35,35 +36,14 @@ if (player) {
     //右移動
     if (player->m_pos.x > m_pos.x + 64) {
         //移動量を設定
-        m_pos.x += move_speed;
+        m_pos.y += move_speed;
         //反転フラグ
         m_flip = false;
         move_flag = true;
     }
-    //左攻撃
-    if (player->m_pos.x < m_pos.x && player->m_pos.x > m_pos.x - 64) {
-        //攻撃状態へ
-        m_state = eState_Attack;
-        m_attack_no++;
-        m_flip = true;
-    }
-    //右攻撃
-    if (player->m_pos.x > m_pos.x && player->m_pos.x < m_pos.x + 64) {
-        //攻撃状態へ
-        m_state = eState_Attack;
-        m_attack_no++;
-        m_flip = false;
-    }
+
 }
-//移動中なら
-if (move_flag) {
-    //走るアニメーション
-    m_img.ChangeAnimation(eAnimRun);
-}
-else {
-    //待機アニメーション
-    m_img.ChangeAnimation(eAnimIdle);
-}
+
 
 }
 
