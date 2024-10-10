@@ -168,7 +168,7 @@ void Player::Collision(Base* b)
 						Base::Add(new Player(CVector2D(200, 850), false, true));
 						Base::Add(new Player(CVector2D(150, 850), false, false));
 						
-						Base::Add(new Goal(CVector2D(1050, 850)));
+						Base::Add(new Goal(CVector2D(1850, 850)));
 					}
 				}
 			}
