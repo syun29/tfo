@@ -23,19 +23,26 @@ Game::Game() :Base(eType_Scene)
 	Base::Add((new Button(eType_Button1, CVector2D(1650,266))));
 
 
-
-
-
-	Base::Add(new Goal(CVector2D(540, 740)));
-
-
-
-}
-
 Game::~Game()
 {
 }
 
 void Game::Update()
 {
+	if (Base* b = Base::FindObject(eType_Goal)) {
+		Goal* g = dynamic_cast<Goal*>(b);
+		if (g->GetGoal()) {
+			//全てのオブジェクトを破棄
+			Base::KillAll();
+			//タイトルシーンへ
+			Base::Add(new Title());
+		}
+	}
+	//プレイヤー死亡　ボタン1でゲームシーン終了
+	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
+		//すべてのオブジェクトを破棄
+		Base::KillAll();
+		//タイトルシーンへ
+		Base::Add(new Title());
+	}
 }

@@ -26,8 +26,7 @@ void Title::Draw()
 			//•`‰æ
 			m_img.Draw();
 		
-	
-	
+		
 	
 }
 
